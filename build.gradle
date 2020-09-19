@@ -15,4 +15,7 @@ dependencies {
 
 test {
     useTestNG()
+    beforeTest { descriptor ->
+        logger.lifecycle("Gradle running test: ${descriptor}")
+    }
 }
