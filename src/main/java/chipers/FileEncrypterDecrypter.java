@@ -24,6 +24,9 @@ public final class FileEncrypterDecrypter {
      * @see sun.security.pkcs11.SunPKCS11
      */
     enum AvailableCiphers {
+        /*
+        https://habr.com/ru/post/444814/
+         */
         AES_CBC_PKCS5Padding("AES/CBC/PKCS5Padding", "AES");
 
         private final String cipherName;
