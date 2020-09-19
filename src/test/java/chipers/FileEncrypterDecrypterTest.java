@@ -41,7 +41,7 @@ public class FileEncrypterDecrypterTest {
 
     @AfterClass
     public void afterClass() {
-//        new File(fileName).delete(); // cleanup
+        new File(fileName).delete(); // cleanup
     }
 
     @Test
