@@ -64,14 +64,16 @@ public final class FileEncrypterDecrypter {
          * This is useful in the case where a random IV was created,
          * or in the context of password-based encryption or
          * decryption, where the IV is derived from a user-supplied password.
-
+         *
+         * In Cipher Block Chaining (CBC), a random initialization vector (IV) is generated for each message,
+         * yielding different cipher text even if the plain text is identical.
          */
         byte[] iv = cipher.getIV();
 
         try (final FileOutputStream fileOut = new FileOutputStream(fileName);
              final CipherOutputStream cipherOut = new CipherOutputStream(fileOut, cipher)) {
             fileOut.write(iv);
-            cipherOut.write(content.getBytes());
+            cipherOut.write(content.getBytes("UTF-8"));
         }
     }
 
